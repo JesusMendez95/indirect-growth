@@ -1,5 +1,5 @@
 # claude local settings
-.claude
+.claude/
 # Miscellaneous
 *.class
 *.log
