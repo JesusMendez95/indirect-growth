@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__notion__notion-search",
+      "mcp__notion__notion-fetch",
+      "Bash(dir \"C:\\\\Users\\\\mende\\\\Documents\\\\Programming\")",
+      "Bash(dir:*)"
+    ]
+  }
+}
