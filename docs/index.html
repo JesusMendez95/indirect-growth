@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indirect Growth - Flutter App Documentation</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+    <nav class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">🌱</span>
+            <h2>Indirect Growth</h2>
+            <p class="subtitle">Developer Guide</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#intro" class="active">🏠 Introduction</a></li>
+            <li><a href="#tech-stack">🔧 Technology Stack</a></li>
+            <li><a href="#folder-structure">📁 Folder Structure</a></li>
+            <li><a href="#architecture">🏗️ Architecture</a></li>
+            <li><a href="#features">⚡ Features</a></li>
+            <li><a href="#code-flow">🔄 Code Flow</a></li>
+            <li><a href="#running">🚀 Running the App</a></li>
+            <li><a href="#glossary">📖 Glossary</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <!-- SECTION 1: INTRODUCTION -->
+        <section id="intro" class="section">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h1>Introduction & Overview</h1>
+            </div>
+
+            <div class="intro-hero">
+                <div class="hero-text">
+                    <h2>Welcome, Developer! 👋</h2>
+                    <p>This guide will teach you everything about the <strong>Indirect Growth</strong> Flutter app.
+                        Whether you've never written code before or are new to mobile development, this documentation is
+                        designed for YOU.</p>
+                </div>
+            </div>
+
+            <div class="card highlight">
+                <h3>🎯 What is Indirect Growth?</h3>
+                <p>A <strong>personal development mobile app</strong> that makes self-improvement feel like a video
+                    game! Track your habits, journal your thoughts, and watch yourself level up in real life.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h4>Habit Tracking</h4>
+                    <p>Build good habits with streak counters and daily reminders</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📔</span>
+                    <h4>Journal</h4>
+                    <p>Write diary entries with photos and mood tracking</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">⚔️</span>
+                    <h4>RPG Progression</h4>
+                    <p>Earn XP and level up your real-life abilities</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🧠</span>
+                    <h4>Identity Tracking</h4>
+                    <p>Define your beliefs, values, and virtues</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>📌 Before You Continue</h4>
+                <p>This app is built with <strong>Flutter</strong> - a framework that lets you write ONE codebase that
+                    works on Android, iOS, Windows, Mac, and Web. The code is written in a language called
+                    <strong>Dart</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: TECHNOLOGY STACK -->
+        <section id="tech-stack" class="section">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h1>Technology Stack</h1>
+            </div>
+
+            <p class="section-intro">Think of building an app like building a house. You need different materials and
+                tools for different jobs. Here are the "tools" we use:</p>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon flutter">🦋</div>
+                    <h3>Flutter</h3>
+                    <p class="tech-role">UI Framework</p>
+                    <div class="tech-analogy">
+                        <strong>🧱 Analogy:</strong> Like a LEGO set for apps - provides ready-made pieces (buttons,
+                        text, images) you snap together to build screens.
+                    </div>
+                    <div class="tech-used-for">
+                        <strong>Used for:</strong> Building all the visual elements users see and interact with.
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon dart">🎯</div>
+                    <h3>Dart</h3>
+                    <p class="tech-role">Programming Language</p>
+                    <div class="tech-analogy">
+                        <strong>📝 Analogy:</strong> The instruction manual that tells the LEGO pieces how to behave.
+                        Every Flutter app is written in Dart.
+                    </div>
+                    <div class="tech-used-for">
+                        <strong>Used for:</strong> Writing all the app logic, like "when user taps this button, do
+                        that."
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon firebase">🔥</div>
+                    <h3>Firebase</h3>
+                    <p class="tech-role">Backend Services</p>
+                    <div class="tech-analogy">
+                        <strong>☁️ Analogy:</strong> Your app's online brain and storage locker. Saves user data in the
+                        cloud so it syncs across devices.
+                    </div>
+                    <div class="tech-used-for">
+                        <strong>Used for:</strong> User login, saving habits/journal entries, storing images.
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon riverpod">🌊</div>
+                    <h3>Riverpod</h3>
+                    <p class="tech-role">State Management</p>
+                    <div class="tech-analogy">
+                        <strong>📬 Analogy:</strong> A messenger service that delivers updates. When data changes, it
+                        tells all the parts of your app that need to know.
+                    </div>
+                    <div class="tech-used-for">
+                        <strong>Used for:</strong> Keeping screens updated when data changes (like marking a habit
+                        complete).
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon gorouter">🗺️</div>
+                    <h3>GoRouter</h3>
+                    <p class="tech-role">Navigation</p>
+                    <div class="tech-analogy">
+                        <strong>🧭 Analogy:</strong> The GPS of your app. It knows which screen to show based on where
+                        the user wants to go.
+                    </div>
+                    <div class="tech-used-for">
+                        <strong>Used for:</strong> Moving between screens (login → home → habits → profile).
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-icon hive">📦</div>
+                    <h3>Hive</h3>
+                    <p class="tech-role">Local Storage</p>
+                    <div class="tech-analogy">
+                        <strong>💾 Analogy:</strong> A small box inside your phone that saves data even without
+                        internet. Fast and works offline.
+                    </div>
+                    <div class="tech-used-for">
+                        <strong>Used for:</strong> Caching data locally for faster loading and offline access.
+                    </div>
+                </div>
+            </div>
+
+            <div class="diagram-container">
+                <h3>🔗 How Everything Connects</h3>
+                <div class="mermaid">
+                    flowchart LR
+                    subgraph Phone["📱 Your Phone"]
+                    Flutter["Flutter App"]
+                    Hive["Hive (Local)"]
+                    end
+                    subgraph Cloud["☁️ Cloud"]
+                    Firebase["Firebase"]
+                    end
+                    Flutter -->|"Riverpod manages data"| Flutter
+                    Flutter -->|"GoRouter handles screens"| Flutter
+                    Flutter <-->|"Save/Load locally"| Hive
+                        Flutter <-->|"Sync online"| Firebase
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: FOLDER STRUCTURE -->
+        <section id="folder-structure" class="section">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h1>Folder Structure</h1>
+            </div>
+
+            <p class="section-intro">Every file has a home! Understanding where things go is crucial. Here's the
+                complete map of the project:</p>
+
+            <div class="folder-tree">
+                <div class="tree-item root">
+                    <span class="folder-icon">📂</span>
+                    <span class="folder-name">indirect_growth/</span>
+                    <span class="folder-desc">— The project root folder</span>
+                </div>
+
+                <!-- LIB FOLDER -->
+                <div class="tree-section">
+                    <div class="tree-item important" data-depth="1">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">lib/</span>
+                        <span class="badge">Most Important!</span>
+                    </div>
+                    <div class="tree-explanation">
+                        <p>🎯 <strong>This is where ALL your Dart code lives.</strong> If you're coding, you're probably
+                            here.</p>
+                    </div>
+
+                    <div class="tree-item file" data-depth="2">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name">main.dart</span>
+                        <span class="folder-desc">— The app's "power button" - execution starts here</span>
+                    </div>
+
+                    <div class="tree-item file" data-depth="2">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name">app.dart</span>
+                        <span class="folder-desc">— Main app config: routing, screens, navigation</span>
+                    </div>
+
+                    <div class="tree-item file" data-depth="2">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name">firebase_options.dart</span>
+                        <span class="folder-desc">— Auto-generated Firebase configuration</span>
+                    </div>
+
+                    <!-- CORE -->
+                    <div class="tree-item" data-depth="2">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">core/</span>
+                        <span class="folder-desc">— Shared code used across features</span>
+                    </div>
+
+                    <div class="tree-item" data-depth="3">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">theme/</span>
+                        <span class="folder-desc">— App colors, fonts, and visual styles</span>
+                    </div>
+                    <div class="tree-item" data-depth="3">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">widgets/</span>
+                        <span class="folder-desc">— Reusable UI components (buttons, text fields)</span>
+                    </div>
+                    <div class="tree-item" data-depth="3">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">utils/</span>
+                        <span class="folder-desc">— Helper functions</span>
+                    </div>
+                    <div class="tree-item" data-depth="3">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">constants/</span>
+                        <span class="folder-desc">— Fixed values that never change</span>
+                    </div>
+
+                    <!-- FEATURES -->
+                    <div class="tree-item important" data-depth="2">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">features/</span>
+                        <span class="badge feature">App Features</span>
+                    </div>
+                    <div class="tree-explanation">
+                        <p>🎯 <strong>Each feature gets its own folder.</strong> This keeps code organized and easy to
+                            find.</p>
+                    </div>
+
+                    <div class="tree-item feature" data-depth="3">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">auth/</span>
+                        <span class="folder-desc">— Login, signup, password reset</span>
+                        <span class="status done">✅ Built</span>
+                    </div>
+                    <div class="tree-item feature" data-depth="3">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">habits/</span>
+                        <span class="folder-desc">— Habit tracking and streaks</span>
+                        <span class="status done">✅ Built</span>
+                    </div>
+                    <div class="tree-item feature" data-depth="3">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">diary/</span>
+                        <span class="folder-desc">— Journal entries</span>
+                        <span class="status pending">🔜 Planned</span>
+                    </div>
+                    <div class="tree-item feature" data-depth="3">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">identity/</span>
+                        <span class="folder-desc">— Beliefs and values</span>
+                        <span class="status pending">🔜 Planned</span>
+                    </div>
+                    <div class="tree-item feature" data-depth="3">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">progression/</span>
+                        <span class="folder-desc">— RPG stats and XP</span>
+                        <span class="status pending">🔜 Planned</span>
+                    </div>
+                </div>
+
+                <!-- OTHER FOLDERS -->
+                <div class="tree-section muted">
+                    <h4>Platform-Specific Folders (Auto-generated)</h4>
+                    <div class="tree-item" data-depth="1">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">android/</span>
+                        <span class="folder-desc">— Android build files</span>
+                    </div>
+                    <div class="tree-item" data-depth="1">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">ios/</span>
+                        <span class="folder-desc">— iOS build files</span>
+                    </div>
+                    <div class="tree-item" data-depth="1">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">windows/</span>
+                        <span class="folder-desc">— Windows build files</span>
+                    </div>
+                    <div class="tree-item" data-depth="1">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">web/</span>
+                        <span class="folder-desc">— Web build files</span>
+                    </div>
+                </div>
+
+                <!-- CONFIG FILES -->
+                <div class="tree-section">
+                    <h4>Configuration Files</h4>
+                    <div class="tree-item file" data-depth="1">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name">pubspec.yaml</span>
+                        <span class="badge config">Important!</span>
+                    </div>
+                    <div class="tree-explanation">
+                        <p>📦 <strong>The Shopping List:</strong> Lists all packages (libraries) the app needs. Like a
+                            recipe's ingredient list.</p>
+                    </div>
+
+                    <div class="tree-item file" data-depth="1">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name">CLAUDE.md</span>
+                        <span class="folder-desc">— AI assistant instructions</span>
+                    </div>
+                    <div class="tree-item file" data-depth="1">
+                        <span class="file-icon">📄</span>
+                        <span class="file-name">README.md</span>
+                        <span class="folder-desc">— Project overview</span>
+                    </div>
+                </div>
+
+                <!-- TEST FOLDER -->
+                <div class="tree-section">
+                    <h4>Testing</h4>
+                    <div class="tree-item" data-depth="1">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">test/</span>
+                        <span class="folder-desc">— Automated tests</span>
+                    </div>
+                    <div class="tree-item" data-depth="2">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">unit/</span>
+                        <span class="folder-desc">— Tests for individual functions</span>
+                    </div>
+                    <div class="tree-item" data-depth="2">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">widget/</span>
+                        <span class="folder-desc">— Tests for UI components</span>
+                    </div>
+                    <div class="tree-item" data-depth="2">
+                        <span class="folder-icon">📂</span>
+                        <span class="folder-name">integration/</span>
+                        <span class="folder-desc">— End-to-end tests</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ARCHITECTURE -->
+        <section id="architecture" class="section">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h1>Architecture Deep Dive</h1>
+            </div>
+
+            <p class="section-intro">This app uses a "Feature-First" architecture. Think of it like organizing a library
+                - books are grouped by topic (features), and each topic has the same organized sections inside.</p>
+
+            <div class="card highlight">
+                <h3>🏛️ What is Feature-First Architecture?</h3>
+                <p>Instead of putting all screens in one folder and all data stuff in another, we put <strong>everything
+                        related to one feature together</strong>. This makes it easy to find and modify code.</p>
+            </div>
+
+            <div class="architecture-layers">
+                <h3>📚 The Three Layers (Inside Each Feature)</h3>
+                <p>Every feature folder has three sub-folders, each with a specific job:</p>
+
+                <div class="layer-cards">
+                    <div class="layer-card presentation">
+                        <div class="layer-header">
+                            <span class="layer-icon">📱</span>
+                            <h4>Presentation Layer</h4>
+                            <span class="layer-path">/presentation</span>
+                        </div>
+                        <p><strong>What users SEE and INTERACT with</strong></p>
+                        <ul>
+                            <li><code>screens/</code> - Full pages (LoginScreen, HabitsListScreen)</li>
+                            <li><code>widgets/</code> - Smaller UI pieces (HabitCard, AuthForm)</li>
+                            <li><code>providers/</code> - State managers (connect UI to data)</li>
+                        </ul>
+                        <div class="layer-analogy">
+                            <strong>🍽️ Restaurant Analogy:</strong> The dining room - where customers sit, see the
+                            menu, and order food.
+                        </div>
+                    </div>
+
+                    <div class="layer-card domain">
+                        <div class="layer-header">
+                            <span class="layer-icon">📋</span>
+                            <h4>Domain Layer</h4>
+                            <span class="layer-path">/domain</span>
+                        </div>
+                        <p><strong>The RULES and DATA SHAPES</strong></p>
+                        <ul>
+                            <li><code>*_model.dart</code> - Data structures (what a Habit looks like)</li>
+                            <li>Business logic (streak calculation rules)</li>
+                        </ul>
+                        <div class="layer-analogy">
+                            <strong>🍽️ Restaurant Analogy:</strong> The recipe book - defines what dishes exist and how
+                            to make them.
+                        </div>
+                    </div>
+
+                    <div class="layer-card data">
+                        <div class="layer-header">
+                            <span class="layer-icon">💾</span>
+                            <h4>Data Layer</h4>
+                            <span class="layer-path">/data</span>
+                        </div>
+                        <p><strong>Talks to DATABASES and APIs</strong></p>
+                        <ul>
+                            <li><code>*_repository.dart</code> - Fetches/saves data from Firebase</li>
+                            <li>Converts raw data to models</li>
+                        </ul>
+                        <div class="layer-analogy">
+                            <strong>🍽️ Restaurant Analogy:</strong> The kitchen - where ingredients (raw data) are
+                            prepared and cooked.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="diagram-container">
+                <h3>🔄 How Data Flows Through Layers</h3>
+                <div class="mermaid">
+                    flowchart TD
+                    subgraph UI["📱 User Interface"]
+                    Screen["Screen (what user sees)"]
+                    Widget["Widget (buttons, cards)"]
+                    end
+
+                    subgraph State["🌊 State Management"]
+                    Provider["Riverpod Provider"]
+                    end
+
+                    subgraph Business["📋 Business Logic"]
+                    Model["Model (data shape)"]
+                    Logic["Business Rules"]
+                    end
+
+                    subgraph Storage["💾 Data Storage"]
+                    Repo["Repository"]
+                    Firebase["Firebase/Hive"]
+                    end
+
+                    Screen --> Widget
+                    Widget -->|"user taps button"| Provider
+                    Provider -->|"asks for data"| Repo
+                    Repo -->|"fetches from"| Firebase
+                    Firebase -->|"returns raw data"| Repo
+                    Repo -->|"converts to"| Model
+                    Model --> Provider
+                    Provider -->|"updates"| Screen
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>💡 Why This Matters</h4>
+                <ul>
+                    <li><strong>Easy to Find:</strong> Looking for habit screens? Go to
+                        <code>features/habits/presentation/screens/</code>
+                    </li>
+                    <li><strong>Easy to Test:</strong> Each layer can be tested independently</li>
+                    <li><strong>Easy to Change:</strong> Swap Firebase for another database without touching UI code
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 5: FEATURES -->
+        <section id="features" class="section">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h1>Feature Breakdown</h1>
+            </div>
+
+            <p class="section-intro">Let's look at the two completed features (Auth and Habits) to understand how all
+                the pieces work together.</p>
+
+            <!-- AUTH FEATURE -->
+            <div class="feature-deep-dive">
+                <h2>🔐 Auth Feature</h2>
+                <p>Handles user login, registration, and sign-out using Firebase Authentication.</p>
+
+                <div class="feature-files">
+                    <h4>📂 File Structure</h4>
+                    <div class="code-block">
+                        <pre>features/auth/
+├── auth.dart              ← Barrel export (one import for everything)
+├── data/
+│   └── auth_repository.dart   ← Talks to Firebase Auth
+├── domain/
+│   └── user_model.dart        ← What a "User" looks like
+└── presentation/
+    ├── providers/
+    │   └── auth_provider.dart ← Manages login state
+    ├── screens/
+    │   ├── login_screen.dart  ← Login page UI
+    │   └── splash_screen.dart ← Loading screen
+    └── widgets/
+        └── auth_form.dart     ← Email/password form</pre>
+                    </div>
+                </div>
+
+                <div class="feature-flow">
+                    <h4>🔄 How Login Works</h4>
+                    <div class="mermaid">
+                        sequenceDiagram
+                        participant U as User
+                        participant S as LoginScreen
+                        participant P as AuthProvider
+                        participant R as AuthRepository
+                        participant F as Firebase
+
+                        U->>S: Enters email & password
+                        U->>S: Taps "Login" button
+                        S->>P: signIn(email, password)
+                        P->>R: signInWithEmail(email, password)
+                        R->>F: Firebase.signInWithEmailAndPassword()
+                        F-->>R: Returns User or Error
+                        R-->>P: Returns User model
+                        P-->>S: Updates auth state
+                        S->>S: Redirects to Home
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>💻 Key Code: User Model</h4>
+                    <p>This is what a "User" looks like in code:</p>
+                    <div class="code-block">
+                        <pre class="dart">class AppUser {
+  final String id;           // Unique identifier
+  final String email;        // User's email
+  final String? displayName; // Optional name
+  final DateTime createdAt;  // When they signed up
+  
+  // Constructor - how to create a user
+  AppUser({
+    required this.id,
+    required this.email,
+    this.displayName,
+    required this.createdAt,
+  });
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HABITS FEATURE -->
+            <div class="feature-deep-dive">
+                <h2>📊 Habits Feature</h2>
+                <p>The main functionality - create habits, mark them complete, track streaks!</p>
+
+                <div class="feature-files">
+                    <h4>📂 File Structure</h4>
+                    <div class="code-block">
+                        <pre>features/habits/
+├── habits.dart              ← Barrel export
+├── data/
+│   └── habits_repository.dart  ← Saves habits to Firebase
+├── domain/
+│   ├── habit_model.dart        ← What a "Habit" looks like
+│   ├── completion_model.dart   ← Tracks daily completions
+│   └── streak_calculator.dart  ← Math for calculating streaks
+└── presentation/
+    ├── providers/
+    │   └── habits_provider.dart ← Manages habit list state
+    ├── screens/
+    │   ├── habits_list_screen.dart  ← All habits page
+    │   ├── habit_detail_screen.dart ← Single habit view
+    │   └── habit_form_screen.dart   ← Create/edit form
+    └── widgets/
+        └── habit_card.dart    ← Habit card component</pre>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>💻 Key Code: Habit Model</h4>
+                    <p>Every habit has these properties:</p>
+                    <div class="code-block">
+                        <pre class="dart">class Habit {
+  final String id;          // Unique ID (like "abc123")
+  final String name;        // "Drink water"
+  final String? description;// "8 glasses per day"
+  final String frequency;   // "daily", "weekly", "monthly"
+  final String category;    // "Health", "Learning", etc.
+  final DateTime createdAt; // When habit was created
+  final bool isActive;      // Is this habit still tracked?
+  final int xpReward;       // Points earned when completed
+
+  // Factory: Creates Habit from Firebase data
+  factory Habit.fromFirestore(DocumentSnapshot doc) {
+    final data = doc.data() as Map<String, dynamic>;
+    return Habit(
+      id: doc.id,
+      name: data['name'],
+      frequency: data['frequency'],
+      // ... more fields
+    );
+  }
+}</pre>
+                    </div>
+                </div>
+
+                <div class="feature-flow">
+                    <h4>🔄 How Completing a Habit Works</h4>
+                    <div class="mermaid">
+                        flowchart LR
+                        A["Tap checkmark ✓"] --> B["Provider.toggleCompletion()"]
+                        B --> C["Repository.saveCompletion()"]
+                        C --> D["Firebase stores it"]
+                        D --> E["Provider updates streak"]
+                        E --> F["UI shows new streak! 🔥"]
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>📌 The "Barrel Export" Pattern</h4>
+                <p>Each feature has a file like <code>auth.dart</code> that "re-exports" everything. This lets you
+                    import the whole feature with one line:</p>
+                <div class="code-block">
+                    <pre class="dart">// Instead of these 4 imports:
+import 'features/auth/data/auth_repository.dart';
+import 'features/auth/domain/user_model.dart';
+import 'features/auth/presentation/providers/auth_provider.dart';
+import 'features/auth/presentation/screens/login_screen.dart';
+
+// You just write ONE import:
+import 'features/auth/auth.dart';</pre>
+                </div>
+            </div>
+
+            <!-- BONUS: REAL CODE DEEP DIVES -->
+            <div class="feature-deep-dive">
+                <h2>🔥 Real Code: Streak Calculator</h2>
+                <p>This is the actual logic that calculates your habit streaks! It's in
+                    <code>streak_calculator.dart</code>:</p>
+
+                <div class="code-example">
+                    <h4>💻 calculateStreak() - The Main Function</h4>
+                    <div class="code-block">
+                        <pre class="dart">class StreakCalculator {
+  /// Calculate the current streak for a habit
+  static int calculateStreak(
+    List&lt;HabitCompletion&gt; completions,
+    String frequency,  // "daily", "weekly", or "monthly"
+  ) {
+    if (completions.isEmpty) return 0;
+
+    // Filter to only completed entries, sorted by date
+    final completedDates = completions
+        .where((c) => c.completed)
+        .map((c) => Helpers.startOfDay(c.date))
+        .toSet()
+        .toList()
+      ..sort((a, b) => b.compareTo(a)); // Newest first
+
+    if (completedDates.isEmpty) return 0;
+
+    final today = Helpers.startOfDay(DateTime.now());
+
+    // Different calculation based on frequency
+    switch (frequency) {
+      case 'daily':
+        return _calculateDailyStreak(completedDates, today);
+      case 'weekly':
+        return _calculateWeeklyStreak(completedDates, today);
+      case 'monthly':
+        return _calculateMonthlyStreak(completedDates, today);
+    }
+    return 0;
+  }
+}</pre>
+                    </div>
+                    <p class="code-note">💡 <strong>Key Pattern:</strong> Uses a <code>switch</code> statement to handle
+                        different frequency types. Each has its own calculation logic.</p>
+                </div>
+
+                <div class="code-example">
+                    <h4>💻 Daily Streak Logic</h4>
+                    <div class="code-block">
+                        <pre class="dart">static int _calculateDailyStreak(List&lt;DateTime&gt; dates, DateTime today) {
+  // Check if today OR yesterday has a completion
+  final yesterday = today.subtract(const Duration(days: 1));
+  DateTime checkDate;
+
+  if (dates.contains(today)) {
+    checkDate = today;        // Start counting from today
+  } else if (dates.contains(yesterday)) {
+    checkDate = yesterday;    // Streak not broken yet!
+  } else {
+    return 0;  // Streak is broken 💔
+  }
+
+  // Count consecutive days going backwards
+  int streak = 0;
+  for (final date in dates) {
+    if (Helpers.isSameDay(date, checkDate)) {
+      streak++;
+      checkDate = checkDate.subtract(const Duration(days: 1));
+    } else if (date.isBefore(checkDate)) {
+      break;  // Gap found, stop counting
+    }
+  }
+  return streak;
+}</pre>
+                    </div>
+                    <p class="code-note">🔥 <strong>Forgiveness:</strong> Notice it checks YESTERDAY too - so you don't
+                        lose your streak until you miss 2 days!</p>
+                </div>
+            </div>
+
+            <div class="feature-deep-dive">
+                <h2>⚠️ Real Code: Error Handling</h2>
+                <p>How the app handles errors gracefully, from <code>auth_repository.dart</code>:</p>
+
+                <div class="code-example">
+                    <h4>💻 Custom Exception Class</h4>
+                    <div class="code-block">
+                        <pre class="dart">// Custom error type for auth errors
+class AuthException implements Exception {
+  final String message;
+  AuthException(this.message);
+
+  @override
+  String toString() => message;
+}</pre>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <h4>💻 Converting Firebase Errors to Friendly Messages</h4>
+                    <div class="code-block">
+                        <pre class="dart">String _getErrorMessage(String code) {
+  switch (code) {
+    case 'weak-password':
+      return 'The password provided is too weak.';
+    case 'email-already-in-use':
+      return 'An account already exists for that email.';
+    case 'invalid-email':
+      return 'The email address is not valid.';
+    case 'user-not-found':
+      return 'No user found for that email.';
+    case 'wrong-password':
+      return 'Wrong password provided.';
+    case 'too-many-requests':
+      return 'Too many attempts. Please try again later.';
+    default:
+      return 'An error occurred. Please try again.';
+  }
+}</pre>
+                    </div>
+                    <p class="code-note">💡 <strong>Pattern:</strong> Firebase returns error codes like "weak-password".
+                        This function converts them to messages users can understand.</p>
+                </div>
+
+                <div class="code-example">
+                    <h4>💻 Try-Catch Pattern</h4>
+                    <div class="code-block">
+                        <pre class="dart">Future&lt;AppUser?&gt; signInWithEmail({
+  required String email,
+  required String password,
+}) async {
+  try {
+    // Try to sign in
+    final credential = await _auth.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+    return await getAppUser(credential.user!.uid);
+    
+  } on FirebaseAuthException catch (e) {
+    // Firebase-specific error
+    throw AuthException(_getErrorMessage(e.code));
+    
+  } catch (e) {
+    // Any other error
+    throw AuthException('An unexpected error occurred');
+  }
+}</pre>
+                    </div>
+                    <p class="code-note">🛡️ <strong>Defensive Coding:</strong> Always wrap Firebase calls in try-catch
+                        to handle network issues, invalid data, etc.</p>
+                </div>
+            </div>
+
+            <div class="feature-deep-dive">
+                <h2>🎨 Real Code: Reusable Widget</h2>
+                <p>How <code>CustomButton</code> in <code>core/widgets/</code> supports multiple styles:</p>
+
+                <div class="code-example">
+                    <h4>💻 Button with Variants</h4>
+                    <div class="code-block">
+                        <pre class="dart">// Define possible button styles
+enum ButtonVariant { primary, secondary, outline, text }
+
+class CustomButton extends StatelessWidget {
+  final String text;
+  final VoidCallback? onPressed;
+  final ButtonVariant variant;
+  final bool isLoading;      // Shows spinner when true
+  final IconData? icon;       // Optional icon
+
+  // Usage examples:
+  // CustomButton(text: "Login", onPressed: () => login())
+  // CustomButton(text: "Cancel", variant: ButtonVariant.outline)
+  // CustomButton(text: "Loading...", isLoading: true)
+}</pre>
+                    </div>
+                    <p class="code-note">♻️ <strong>Reusability:</strong> Instead of creating 4 different button
+                        widgets, one widget handles all cases with the <code>variant</code> parameter.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: CODE FLOW -->
+        <section id="code-flow" class="section">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h1>Code Flow & Relationships</h1>
+            </div>
+
+            <p class="section-intro">Let's trace how the app runs from the moment you start it.</p>
+
+            <div class="flow-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>📱 main.dart - The Starting Point</h3>
+                    <p>When you run the app, Dart looks for the <code>main()</code> function. This is like turning on
+                        the car ignition.</p>
+                    <div class="code-block">
+                        <pre class="dart">void main() async {
+  // 1. Prepare Flutter to run
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // 2. Connect to Firebase (our online database)
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  // 3. Initialize Hive (local storage)
+  await Hive.initFlutter();
+
+  // 4. Start the app wrapped in ProviderScope
+  //    (This enables Riverpod state management)
+  runApp(
+    const ProviderScope(
+      child: IndirectGrowthApp(),
+    ),
+  );
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>🎨 app.dart - App Configuration</h3>
+                    <p>The <code>IndirectGrowthApp</code> widget sets up the app's look and navigation.</p>
+                    <div class="code-block">
+                        <pre class="dart">class IndirectGrowthApp extends ConsumerWidget {
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.watch(routerProvider);
+
+    return MaterialApp.router(
+      title: 'Indirect Growth',
+      theme: AppTheme.lightTheme,    // Colors for light mode
+      darkTheme: AppTheme.darkTheme, // Colors for dark mode
+      themeMode: ThemeMode.dark,     // Use dark mode
+      routerConfig: router,          // Navigation rules
+    );
+  }
+}</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>🗺️ GoRouter - Navigation Rules</h3>
+                    <p>The router decides which screen to show based on the URL path.</p>
+                    <div class="code-block">
+                        <pre class="dart">final routerProvider = Provider<GoRouter>((ref) {
+  return GoRouter(
+    initialLocation: '/',  // Start at home
+    
+    // Redirect rules (like security guards)
+    redirect: (context, state) {
+      final isLoggedIn = /* check auth state */;
+      
+      // Not logged in? Go to login page
+      if (!isLoggedIn) return '/login';
+      
+      return null; // Stay where you are
+    },
+    
+    routes: [
+      GoRoute(path: '/login', builder: (_, __) => LoginScreen()),
+      GoRoute(path: '/', builder: (_, __) => HomeScreen()),
+      GoRoute(path: '/habits', builder: (_, __) => HabitsListScreen()),
+      GoRoute(path: '/profile', builder: (_, __) => ProfileScreen()),
+    ],
+  );
+});</pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="diagram-container">
+                <h3>📊 Complete App Flow Diagram</h3>
+                <div class="mermaid">
+                    flowchart TD
+                    Start["🚀 flutter run"] --> Main["main.dart"]
+                    Main --> Init["Initialize Firebase + Hive"]
+                    Init --> Provider["Wrap in ProviderScope"]
+                    Provider --> App["IndirectGrowthApp"]
+                    App --> Router["GoRouter checks auth"]
+
+                    Router -->|"Not logged in"| Login["LoginScreen"]
+                    Router -->|"Logged in"| Home["HomeScreen"]
+
+                    Home --> Nav["Bottom Navigation"]
+                    Nav --> Habits["HabitsListScreen"]
+                    Nav --> Profile["ProfileScreen"]
+
+                    Login -->|"success"| Home
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>🔑 Key Concept: ConsumerWidget</h4>
+                <p>Notice widgets use <code>ConsumerWidget</code> instead of <code>StatelessWidget</code>. This is a
+                    Riverpod thing - it lets the widget "watch" for changes in data (providers).</p>
+                <div class="code-block">
+                    <pre class="dart">// Regular Flutter widget (can't use Riverpod)
+class MyWidget extends StatelessWidget { ... }
+
+// Riverpod widget (can watch providers!)
+class MyWidget extends ConsumerWidget {
+  Widget build(BuildContext context, WidgetRef ref) {
+    // ref.watch() listens for changes
+    final user = ref.watch(currentUserProvider);
+    return Text(user.name);
+  }
+}</pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: RUNNING -->
+        <section id="running" class="section">
+            <div class="section-header">
+                <span class="section-number">07</span>
+                <h1>Running the App</h1>
+            </div>
+
+            <p class="section-intro">Follow these steps to get the app running on your computer.</p>
+
+            <div class="prerequisites">
+                <h3>📋 Prerequisites (What You Need First)</h3>
+                <div class="prereq-grid">
+                    <div class="prereq-item">
+                        <span class="prereq-icon">🎯</span>
+                        <div>
+                            <h4>Flutter SDK</h4>
+                            <p>Download from <a href="https://flutter.dev" target="_blank">flutter.dev</a></p>
+                        </div>
+                    </div>
+                    <div class="prereq-item">
+                        <span class="prereq-icon">💻</span>
+                        <div>
+                            <h4>Code Editor</h4>
+                            <p>VS Code or Android Studio</p>
+                        </div>
+                    </div>
+                    <div class="prereq-item">
+                        <span class="prereq-icon">📱</span>
+                        <div>
+                            <h4>Emulator or Device</h4>
+                            <p>Android/iOS emulator or physical phone</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="command-steps">
+                <h3>🚀 Step-by-Step Commands</h3>
+
+                <div class="command-step">
+                    <div class="step-header">
+                        <span class="step-num">1</span>
+                        <span>Open terminal in the project folder</span>
+                    </div>
+                    <div class="command-box">
+                        <code>cd c:\Users\mende\Documents\Programming\indirect_growth</code>
+                    </div>
+                </div>
+
+                <div class="command-step">
+                    <div class="step-header">
+                        <span class="step-num">2</span>
+                        <span>Install dependencies (packages listed in pubspec.yaml)</span>
+                    </div>
+                    <div class="command-box">
+                        <code>flutter pub get</code>
+                    </div>
+                    <p class="command-note">💡 This downloads all the libraries the app needs</p>
+                </div>
+
+                <div class="command-step">
+                    <div class="step-header">
+                        <span class="step-num">3</span>
+                        <span>Configure Firebase (one-time setup)</span>
+                    </div>
+                    <div class="command-box">
+                        <code>dart pub global activate flutterfire_cli</code>
+                        <code>flutterfire configure</code>
+                    </div>
+                    <p class="command-note">⚠️ Requires a Firebase project - see <a href="https://firebase.google.com"
+                            target="_blank">firebase.google.com</a></p>
+                </div>
+
+                <div class="command-step">
+                    <div class="step-header">
+                        <span class="step-num">4</span>
+                        <span>Run the app!</span>
+                    </div>
+                    <div class="command-box">
+                        <code>flutter run</code>
+                    </div>
+                    <p class="command-note">📱 Choose a device when prompted (Chrome for web, emulator, or connected
+                        phone)</p>
+                </div>
+            </div>
+
+            <div class="other-commands">
+                <h3>📚 Other Useful Commands</h3>
+                <table class="commands-table">
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>What It Does</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>flutter test</code></td>
+                            <td>Run automated tests</td>
+                        </tr>
+                        <tr>
+                            <td><code>flutter analyze</code></td>
+                            <td>Check for code issues/warnings</td>
+                        </tr>
+                        <tr>
+                            <td><code>flutter clean</code></td>
+                            <td>Delete build files (fix weird errors)</td>
+                        </tr>
+                        <tr>
+                            <td><code>flutter doctor</code></td>
+                            <td>Check if Flutter is set up correctly</td>
+                        </tr>
+                        <tr>
+                            <td><code>flutter run -d chrome</code></td>
+                            <td>Run as a web app in Chrome</td>
+                        </tr>
+                        <tr>
+                            <td><code>flutter run -d windows</code></td>
+                            <td>Run as a Windows desktop app</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="info-box warning">
+                <h4>⚠️ Common Errors & Fixes</h4>
+                <ul>
+                    <li><strong>"Flutter not found"</strong> → Add Flutter to your PATH environment variable</li>
+                    <li><strong>"No devices found"</strong> → Start an emulator or connect a phone</li>
+                    <li><strong>"Firebase not configured"</strong> → Run <code>flutterfire configure</code></li>
+                    <li><strong>Random build errors</strong> → Try <code>flutter clean</code> then
+                        <code>flutter pub get</code>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 8: GLOSSARY -->
+        <section id="glossary" class="section">
+            <div class="section-header">
+                <span class="section-number">08</span>
+                <h1>Glossary</h1>
+            </div>
+
+            <p class="section-intro">New to programming? Here's a dictionary of terms you'll see in this project.</p>
+
+            <div class="glossary-grid">
+                <div class="glossary-category">
+                    <h3>📦 Flutter & Dart Terms</h3>
+
+                    <div class="term">
+                        <dt>Widget</dt>
+                        <dd>Everything in Flutter is a widget - buttons, text, images, even the whole screen. Think of
+                            them as LEGO bricks.</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>StatelessWidget</dt>
+                        <dd>A widget that never changes. Like a photo - once created, it stays the same.</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>StatefulWidget</dt>
+                        <dd>A widget that CAN change. Like a video - it can update over time.</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>ConsumerWidget</dt>
+                        <dd>A Riverpod-enhanced widget that can "watch" providers for changes.</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>BuildContext</dt>
+                        <dd>Information about WHERE a widget is in the app tree. Used to find parent widgets and access
+                            themes.</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>Scaffold</dt>
+                        <dd>The basic layout structure for a screen - provides app bar, body, and bottom navigation.
+                        </dd>
+                    </div>
+                </div>
+
+                <div class="glossary-category">
+                    <h3>🌊 State Management Terms</h3>
+
+                    <div class="term">
+                        <dt>State</dt>
+                        <dd>Data that can change over time. Like "is the user logged in?" or "what habits did they
+                            complete today?"</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>Provider</dt>
+                        <dd>A container that holds data and notifies widgets when that data changes.</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>ref.watch()</dt>
+                        <dd>Tells a widget to listen to a provider and rebuild when data changes.</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>ref.read()</dt>
+                        <dd>Gets data from a provider ONE time (doesn't listen for changes). Used in button callbacks.
+                        </dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>Notifier</dt>
+                        <dd>A class that manages state and provides methods to modify it.</dd>
+                    </div>
+                </div>
+
+                <div class="glossary-category">
+                    <h3>🔥 Firebase Terms</h3>
+
+                    <div class="term">
+                        <dt>Firestore</dt>
+                        <dd>Firebase's database - stores data in "documents" grouped into "collections" (like folders).
+                        </dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>Collection</dt>
+                        <dd>A group of related documents. Like a folder of files. Example: <code>users/</code>,
+                            <code>habits/</code>
+                        </dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>Document</dt>
+                        <dd>A single record in Firebase. Like one row in an Excel spreadsheet.</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>Firebase Auth</dt>
+                        <dd>Handles user login/signup. Creates secure accounts with email/password or Google sign-in.
+                        </dd>
+                    </div>
+                </div>
+
+                <div class="glossary-category">
+                    <h3>🛠️ Programming Concepts</h3>
+
+                    <div class="term">
+                        <dt>async / await</dt>
+                        <dd>Keywords for handling operations that take time (like loading data from the internet).
+                            <code>await</code> means "wait for this to finish."
+                        </dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>Future</dt>
+                        <dd>A promise that data WILL arrive eventually. Like ordering food - you get a receipt now, food
+                            comes later.</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>Stream</dt>
+                        <dd>Continuous flow of data over time. Like a TV channel - data keeps coming.</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>Repository</dt>
+                        <dd>A class that handles all data operations (get, save, delete). Hides the complexity of
+                            databases from the rest of the app.</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>Model</dt>
+                        <dd>A class that defines the shape of data. Like a template or blueprint.</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>Factory</dt>
+                        <dd>A special constructor that can return different things based on input. Used to create models
+                            from raw data.</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>final</dt>
+                        <dd>A variable that can only be set once. Like writing in permanent ink.</dd>
+                    </div>
+
+                    <div class="term">
+                        <dt>const</dt>
+                        <dd>A value that's fixed at compile time. Never, ever changes.</dd>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>📚 Want to Learn More?</h4>
+                <ul>
+                    <li><a href="https://flutter.dev/docs" target="_blank">Flutter Official Docs</a> - The best place to
+                        learn Flutter</li>
+                    <li><a href="https://dart.dev/guides" target="_blank">Dart Language Guide</a> - Learn the Dart
+                        programming language</li>
+                    <li><a href="https://riverpod.dev" target="_blank">Riverpod Docs</a> - State management deep dive
+                    </li>
+                    <li><a href="https://firebase.google.com/docs" target="_blank">Firebase Docs</a> - Backend services
+                        documentation</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="doc-footer">
+            <p>📚 Indirect Growth Documentation | Built for Junior Developers</p>
+            <p>Last updated: February 2026</p>
+        </footer>
+    </main>
+
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+
+        // Smooth scrolling and active nav
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
